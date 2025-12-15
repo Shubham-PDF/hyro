@@ -57,4 +57,6 @@ Key routes (full list in `Backend/backendAPI.md`):
 - If you see the `assests/` folder in the frontend, it is a known typo and can be renamed to `assets/` when convenient.
 - Supabase handles resume storage; ensure bucket permissions align with your deployment plan.
 
+## License and support
+Created by the Hyro team. For issues or questions, open a ticket or reach out to the maintainers. See module-specific docs in `Frontend/frontend.md` and `Backend/backendAPI.md` for deeper details.
 
