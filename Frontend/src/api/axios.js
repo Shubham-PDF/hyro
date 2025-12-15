@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
   // We will update this base URL once you share the Django docs
-  baseURL: 'http://localhost:8000/',
+  baseURL: 'https://hyro-diel.onrender.com/',
   headers: {
     'Content-Type': 'application/json',
   },
