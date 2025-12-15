@@ -26,12 +26,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@_d=!a_w-vkyy@)eb19&gs(e1-0j_1b^xfi=w3f!ltnb^w+i!m'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".onrender.com",
+]
 
 
 # Application definition
@@ -185,4 +189,13 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 AUTH_USER_MODEL = 'accounts.CustomUser'
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
-CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",          # local frontend
+    "https://hyro-phi.vercel.app",     # production frontend
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://hyro-phi.vercel.app",
+]
